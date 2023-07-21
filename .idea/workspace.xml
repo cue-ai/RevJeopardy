@@ -4,7 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9116e019-c78b-4f86-9836-1a8ea090f5c4" name="Changes" comment="" />
+    <list default="true" id="9116e019-c78b-4f86-9836-1a8ea090f5c4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/components/Contexts/CurrentStateContext.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/hooks/useTypingAnimation.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/organisms/Gameplay/AnswerQuestion.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/organisms/Gameplay/WagerAnswer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/organisms/Intro.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/organisms/Sprites/Alex.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/organisms/Sprites/AlexHeader.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/organisms/Sprites/JeopardyBoard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/organisms/Tutorial/Tutorial.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/organisms/Tutorial/TutorialGameplay.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/alex.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/jeopardy.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/types/Game.types.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/types/Html.types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,9 +51,16 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "/Users/anirudhramprasad/Code+Past_projects/Cue/revjeopardy/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/components/organisms/Tutorial" />
+      <recent name="$PROJECT_DIR$/components/organisms/Sprites" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -45,6 +70,7 @@
       <option name="presentableId" value="Default" />
       <updated>1689879664202</updated>
       <workItem from="1689879667230" duration="323000" />
+      <workItem from="1689880152975" duration="31802000" />
     </task>
     <servers />
   </component>

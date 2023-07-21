@@ -16,7 +16,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className}`}>
+      <div
+          style={{ backgroundImage: `url("/jeopardy.jpeg")` }}
+          className="flex flex-col h-screen w-screen  bg-cover "
+
+      >
+
+        <main className="flex flex-col flex-1 ">{children}</main>
+      </div>
+      </body>
     </html>
   )
 }
