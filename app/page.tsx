@@ -5,6 +5,7 @@ import {Intro} from "@/components/organisms/Intro"
 import {CurrentState} from "@/shared/types/Game.types";
 import {CurrentStateContext} from "@/components/Contexts/CurrentStateContext";
 import {Tutorial} from "@/components/organisms/Tutorial/Tutorial";
+import {Gameplay} from "@/components/organisms/Gameplay/Gameplay";
 
 export default function Home() {
 
@@ -16,7 +17,7 @@ export default function Home() {
             <div className={"w-full h-full"}>
                 {currentState==="intro" ?<Intro/>:
                 currentState==="tutorial"?<Tutorial setCurrentState={setCurrentState} />
-                    :<h1>game</h1>}
+                    :<Gameplay/>}
                 {/*{currentState==="intro" &&<Intro/>}*/}
 
             </div>

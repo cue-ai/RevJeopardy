@@ -40,13 +40,13 @@ export const useTypingAnimationTwoElements = (content1:string,content2:string, s
     },[content1,content1])
 
     useEffect(() => {
-        if (index1 < content1.length) {
+        if (index1 < content1?.length??0) {
             setTimeout(() => {
                 setText1((prev)=>prev+content1[index1])
                 setIndex1((prev)=>prev + 1)
             }, speed1)
         }
-        else if (index2 < content2.length) {
+        else if (index2 < content2?.length??0) {
             setTimeout(() => {
                 setText2((prev)=>prev+content2[index2])
                 setIndex2((prev)=>prev + 1)

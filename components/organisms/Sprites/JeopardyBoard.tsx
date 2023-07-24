@@ -1,82 +1,81 @@
-import {CategoryType, Question, QuestionValue, TutorialEnum} from "@/shared/types/Game.types";
+import {CategoryType, Question, QuestionValue, TutorialEnum,revenueOperationsCategories} from "@/shared/types/Game.types";
+import {FC} from "react";
+import {tutorialQuestions} from "@/shared/questions/tutorialQuestions";
 
 export type JeopardyBoardProps={
-    categoriess:CategoryType[]
+    categories:CategoryType[]
     setSelectedQuestion:(arg:Question)=>void,
-    tutorialState?:TutorialEnum
+    score:number,
+    prevQuestions:string[]
 }
-export const JeopardyBoard=({ categoriess,setSelectedQuestion,tutorialState}: JeopardyBoardProps)=>{
-    const categories = [
-        {
-            name: 'Category 1',
-            clues: [
-                { value: '$200' },
-                { value: '$400' },
-                { value: '$600' },
-                { value: '$800' },
-                { value: '$1000' },
-            ],
-        },
-        {
-            name: 'Category 2',
-            clues: [
-                { value: '$200' },
-                { value: '$400' },
-                { value: '$600' },
-                { value: '$800' },
-                { value: '$1000' },
-            ],
-        }, {
-            name: 'Category 2',
-            clues: [
-                { value: '$200' },
-                { value: '$400' },
-                { value: '$600' },
-                { value: '$800' },
-                { value: '$1000' },
-            ],
-        }, {
-            name: 'Category 2',
-            clues: [
-                { value: '$200' },
-                { value: '$400' },
-                { value: '$600' },
-                { value: '$800' },
-                { value: '$1000' },
-            ],
-        }, {
-            name: 'Category 2',
-            clues: [
-                { value: '$200' },
-                { value: '$400' },
-                { value: '$600' },
-                { value: '$800' },
-                { value: '$1000' },
-            ],
-        }]
-    return (
-        <div className="grid grid-cols-5 gap-2 p-4 bg-black">
-            {categories.map((category, i) => (
-                <div key={i} className="flex flex-col items-center bg-black">
-                    <div className="font-bold text-lg mb-2 h-20 w-full bg-blue-700 text-white grid place-content-center">{category.name}</div>
-                    {category.clues.map((clue, j) => (
-                        <div key={j} className={`font-serif grid place-content-center w-full h-28  
-                        bg-blue-700 text-amber-300 text-3xl my-1 cursor-pointer hover:bg-blue-600`}
-                             onClick={()=>{setSelectedQuestion({
-                                 text:"hello",
-                                 answer:"hello",
-                                 value:200,
-                                 numAttempts:2,
-                                 numCorrect:3,
-                                 category:"hello"
-                             })}}
-                        >
 
-                            {`${clue.value}`}
+export type JeopardyBoardTutorialProps={
+    tutorialState:TutorialEnum;
+    setSelectedQuestion:(arg:Question)=>void,
+    score:number
+}
+const tutorialValues=[200,400,600,800,1000];
+
+
+export const JeopardyBoardTutorial:FC<JeopardyBoardTutorialProps>=({tutorialState,setSelectedQuestion, score})=>{
+    const q=tutorialQuestions[tutorialState-1];
+    return (
+        <>
+            <div className={"w-full text-center text-white text-xl font-semibold"}>${score}</div>
+            <div className="grid grid-cols-5 gap-2 p-4 bg-black">
+            {revenueOperationsCategories.map((category, i) => (
+                <div key={i} className="flex flex-col items-center bg-black">
+                    <div className="font-bold text-lg mb-2 h-20 w-full bg-blue-700 text-white grid place-content-center">{category}</div>
+
+                    {tutorialValues.map((value, j) => {
+                        const isClickable= q.value===value && q.category===category;
+                        return (
+                        <div key={j} className={`font-serif grid place-content-center w-full h-28  
+                        ${isClickable ? "bg-blue-700 hover:bg-blue-600": "bg-blue-400"}
+                         text-amber-300 text-3xl my-1 cursor-pointer`}
+                             onClick={()=>{
+                                 if (!isClickable)return;
+                                 setSelectedQuestion(q);
+                             }}
+                        >
+                            ${value}
                         </div>
-                    ))}
+                        )
+                    })}
                 </div>
             ))}
         </div>
+        </>
     );
 }
+export const JeopardyBoard=({categories,setSelectedQuestion,score,prevQuestions}: JeopardyBoardProps)=>(
+        <>
+            <div className={"w-full text-center text-white text-xl font-semibold"}>${score}</div>
+            <div className="grid grid-cols-5 gap-2 p-4 bg-black">
+            {categories.map((category, i) => (
+                <div key={i} className="flex flex-col items-center bg-black">
+                    <div className="font-bold text-lg mb-2 h-20 w-full bg-blue-700 text-white grid place-content-center">{category.name}</div>
+
+                    {category.questions.map((question, j) => {
+                       const prevQuestionSet= new Set(prevQuestions);
+                       const isClickable=!prevQuestionSet.has(question?._id as string);
+                        return (
+                            <div key={j} className={`font-serif grid place-content-center w-full h-28  
+                        ${isClickable ? "bg-blue-700 hover:bg-blue-600 cursor-pointer": "bg-blue-400"}
+                         text-amber-300 text-3xl my-1 `}
+                                 onClick={() => {
+                                     if (!isClickable)return;
+                                     setSelectedQuestion(question)
+                                 }}
+                            >
+
+                                {`$${question.value}`}
+                            </div>
+                        )
+
+                    })}
+                </div>
+            ))}
+        </div>
+        </>
+    )

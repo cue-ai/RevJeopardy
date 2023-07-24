@@ -8,8 +8,7 @@ export type WagerAnswerProps={
 }
 
 export const WagerAnswer:FC<WagerAnswerProps>=({setWagerAmount,isFinalRound})=>{
-    console.log(isFinalRound)
-    const [value,setValue]=useState<any>(0);
+    const [value,setValue]=useState<number>(0);
     return( <>
         <Alex headerText={`Choose a wager amount`} contentText={`${isFinalRound?"Choose a gamble in the final round":`Here's a daily double. You have to wager some amount (greater than 5) 
         and less than the amount of money you have.`}`}/>
@@ -23,8 +22,8 @@ export const WagerAnswer:FC<WagerAnswerProps>=({setWagerAmount,isFinalRound})=>{
                     className=" shadow appearance-none border rounded w-6/12 max-w-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     type="number"
                     placeholder="Type your Answer."
-                    value={value}
-                    onChange={(e)=>setValue(e.target.value)}
+
+                    onChange={(e)=>setValue(Number(e.target.value))}
                 />
             </div>
         </form>
