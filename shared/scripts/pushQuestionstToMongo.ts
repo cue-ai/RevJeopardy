@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import { MongoClient, Collection } from "mongodb";
 import {Question} from "@/shared/types/Game.types";
-import {additionalFinalRoundQuestions} from "../questions/AdditionalFinalRoundQuestions";
+import {jeopardyQuestions} from "../questions/AllQuestions";
 
 const mongoURI = process.env.DATABASE_URL;
 const dbName = "revhq-ai-development";
@@ -29,4 +29,4 @@ async function pushQuestionsToMongoDB(questions: Question[]) {
 }
 
 // Call the function with your jeopardyQuestions array
-void pushQuestionsToMongoDB(additionalFinalRoundQuestions);
+void pushQuestionsToMongoDB(jeopardyQuestions);

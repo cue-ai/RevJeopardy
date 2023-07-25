@@ -5,31 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9116e019-c78b-4f86-9836-1a8ea090f5c4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/api/handleAnswerSubmit/route.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/api/questions/route.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/atoms/Loading.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/organisms/Gameplay/FinalRound.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/organisms/Gameplay/Gameplay.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/organisms/Gameplay/StandardJeopardy.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/gameplay/helperFunctions.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/mongo/queryMongo.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/questions/AdditionalFinalRoundQuestions.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/questions/AllQuestions.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/questions/tutorialQuestions.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/scripts/pushQuestionstToMongo.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/atoms/CheckBoxForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/mongo/updateMongo.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/hooks/useTypingAnimation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/hooks/useTypingAnimation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/handleAnswerSubmit/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/handleAnswerSubmit/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/organisms/Gameplay/AnswerQuestion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/organisms/Gameplay/AnswerQuestion.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/organisms/Gameplay/Gameplay.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/organisms/Gameplay/Gameplay.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/organisms/Gameplay/StandardJeopardy.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/organisms/Gameplay/StandardJeopardy.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/organisms/Gameplay/WagerAnswer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/organisms/Gameplay/WagerAnswer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/organisms/Intro.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/organisms/Intro.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/organisms/Sprites/Alex.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/organisms/Sprites/Alex.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/organisms/Sprites/AlexHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/organisms/Sprites/AlexHeader.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/organisms/Sprites/JeopardyBoard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/organisms/Sprites/JeopardyBoard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/organisms/Tutorial/Tutorial.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/organisms/Tutorial/Tutorial.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/organisms/Tutorial/TutorialGameplay.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/organisms/Tutorial/TutorialGameplay.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/questions/AdditionalFinalRoundQuestions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/shared/questions/AdditionalFinalRoundQuestions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/questions/AllQuestions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/shared/questions/AllQuestions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/questions/tutorialQuestions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/shared/questions/tutorialQuestions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/scripts/pushQuestionstToMongo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/shared/scripts/pushQuestionstToMongo.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared/types/Game.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/shared/types/Game.types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared/types/Html.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/shared/types/Html.types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,6 +64,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/fonts" />
       <recent name="$PROJECT_DIR$/components/organisms/Tutorial" />
       <recent name="$PROJECT_DIR$/components/organisms/Sprites" />
     </key>
@@ -80,7 +80,7 @@
       <updated>1689879664202</updated>
       <workItem from="1689879667230" duration="323000" />
       <workItem from="1689880152975" duration="31969000" />
-      <workItem from="1689977153818" duration="26086000" />
+      <workItem from="1689977153818" duration="42902000" />
     </task>
     <servers />
   </component>

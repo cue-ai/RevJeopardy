@@ -19,40 +19,22 @@ export const Gameplay:FC=()=>{
         onClick:()=>setGameMode("standard"),
         className:""
     }
-    const doubleIntroButton:ButtonType={
-        text: "Let's play",
-        onClick:()=>setGameMode("double"),
-        className:""
-    }
     console.log(gameMode)
     return (<div className={"w-full h-full"}>
-        <button onClick={()=>setGameMode("doubleIntro")} className={"bg-red-300"}>
-            Go to round 2
-        </button>
-        <button onClick={()=>setGameMode("finalIntro")} className={"bg-green-300"}>
-            Go to final round
-        </button>
         {gameMode==="intro" &&
             <div className={"w-full  bg-slate-600 text-white rounded-md py-8 p-2 border"}>
                 <Alex headerText={`Welcome to the first round of RevJeopardy.` }
         contentText={"Click the button below to start playing"} button1={introButton}/>
-            </div>}
+            </div>
+        }
         {
-            (gameMode==="standard" || gameMode==="double") && <StandardJeopardy score={score} setScore={setScore} setGameMode={setGameMode}
+            gameMode==="standard" && <StandardJeopardy score={score} setScore={setScore} setGameMode={setGameMode}
                                                        gameMode={gameMode}
                                                        setPrevQuestions={setPrevQuestions} prevQuestions={prevQuestions}/>
         }
-        {gameMode==="doubleIntro" &&
+        {
+            gameMode==="gameOver" &&
             <div className={"w-full  bg-slate-600 text-white rounded-md py-8 p-2 border"}>
-                <Alex headerText={`Welcome to Double Jeopardy` }
-                      contentText={"Questions are worth double"} button1={doubleIntroButton}/>
-            </div>}
-        {
-            ((gameMode==="final" || gameMode==="finalIntro") &&score>0) && <FinalRound
-            gameMode={gameMode} setGameMode={setGameMode} score={score} setScore={setScore} prevQuestions={prevQuestions}/>
-        }
-        {
-            (gameMode==="gameOver" ||  ((gameMode==="final" || gameMode==="finalIntro") &&score==0)) && <div className={"w-full  bg-slate-600 text-white rounded-md py-8 p-2 border"}>
                 <Alex headerText={`Great Job.` }
                       contentText={`Great Job. You have a final score of ${score}`} />
             </div>

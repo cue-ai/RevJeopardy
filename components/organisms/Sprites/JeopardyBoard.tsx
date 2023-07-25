@@ -14,25 +14,25 @@ export type JeopardyBoardTutorialProps={
     setSelectedQuestion:(arg:Question)=>void,
     score:number
 }
-const tutorialValues=[200,400,600,800,1000];
+const tutorialValues=[200,400,800,1000];
 
 
 export const JeopardyBoardTutorial:FC<JeopardyBoardTutorialProps>=({tutorialState,setSelectedQuestion, score})=>{
     const q=tutorialQuestions[tutorialState-1];
     return (
         <>
-            <div className={"w-full text-center text-white text-xl font-semibold"}>${score}</div>
+            <div className={"w-full text-center text-white text-5xl font-semibold my-2 tracking-wide"}>${score}</div>
             <div className="grid grid-cols-5 gap-2 p-4 bg-black">
             {revenueOperationsCategories.map((category, i) => (
                 <div key={i} className="flex flex-col items-center bg-black">
-                    <div className="font-bold text-lg mb-2 h-20 w-full bg-blue-700 text-white grid place-content-center">{category}</div>
+                    <div className="font-bold text-2xl mb-2 h-20 w-full bg-blue-700 text-white grid place-content-center tracking-widest">{category}</div>
 
                     {tutorialValues.map((value, j) => {
                         const isClickable= q.value===value && q.category===category;
                         return (
-                        <div key={j} className={`font-serif grid place-content-center w-full h-28  
+                        <div key={j} className={`grid place-content-center w-full h-28  
                         ${isClickable ? "bg-blue-700 hover:bg-blue-600": "bg-blue-400"}
-                         text-amber-300 text-3xl my-1 cursor-pointer`}
+                         text-amber-300 text-3xl my-1 cursor-pointer `}
                              onClick={()=>{
                                  if (!isClickable)return;
                                  setSelectedQuestion(q);
@@ -50,17 +50,17 @@ export const JeopardyBoardTutorial:FC<JeopardyBoardTutorialProps>=({tutorialStat
 }
 export const JeopardyBoard=({categories,setSelectedQuestion,score,prevQuestions}: JeopardyBoardProps)=>(
         <>
-            <div className={"w-full text-center text-white text-xl font-semibold"}>${score}</div>
+            <div className={"w-full text-center text-white text-5xl font-semibold my-2 tracking-wide"}>${score}</div>
             <div className="grid grid-cols-5 gap-2 p-4 bg-black">
             {categories.map((category, i) => (
                 <div key={i} className="flex flex-col items-center bg-black">
-                    <div className="font-bold text-lg mb-2 h-20 w-full bg-blue-700 text-white grid place-content-center">{category.name}</div>
+                    <div className="font-bold text-2xl mb-2 h-20 w-full bg-blue-700 text-white grid place-content-center tracking-widest">{category.name}</div>
 
                     {category.questions.map((question, j) => {
                        const prevQuestionSet= new Set(prevQuestions);
                        const isClickable=!prevQuestionSet.has(question?._id as string);
                         return (
-                            <div key={j} className={`font-serif grid place-content-center w-full h-28  
+                            <div key={j} className={` grid place-content-center w-full h-28  
                         ${isClickable ? "bg-blue-700 hover:bg-blue-600 cursor-pointer": "bg-blue-400"}
                          text-amber-300 text-3xl my-1 `}
                                  onClick={() => {

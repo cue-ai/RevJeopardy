@@ -59,8 +59,7 @@ export const StandardJeopardy:FC<StandardJeopardyProps>=({gameMode,score,setScor
         }, 0);
 
         if (numQuestionsDone===totalQuestions){
-            if (gameMode=="standard")setGameMode('doubleIntro')
-            else if (gameMode=="double")setGameMode('finalIntro')
+            setGameMode('gameOver')
         }
     }
 
@@ -70,8 +69,8 @@ export const StandardJeopardy:FC<StandardJeopardyProps>=({gameMode,score,setScor
 
 
     return (<div className={"w-full h-full"}>
-        <AlexHeader text={gameMode==="standard" ?
-      "The more the dollar amount, the harder the question." : "Questions are worth double. Have fun" }/>
+        <AlexHeader text={
+      "The more the dollar amount, the harder the question."  }/>
         {
             isLoading? <div className={"w-full h-full grid place-content-center"}>
                     <Loading/>

@@ -18,11 +18,10 @@ export const Tutorial:FC<TutorialProps>=({setCurrentState})=>{
         const NextButton:ButtonType={
                 text:"Next",
                 onClick:()=>setTutorialState((prev)=>prev+1),
-                className:""
         }
 
 
-        return <div className={"w-full  grid justify-items-center "}>
+        return <div className={"w-full h-full grid justify-items-center "}>
                 {tutorialState===TutorialEnum.Intro ?<div className={"w-full  bg-slate-600 text-white rounded-md py-8 p-2 border"}>
                         <Alex headerText={headerTutorialText} contentText={textContent}
                               button1={NextButton}

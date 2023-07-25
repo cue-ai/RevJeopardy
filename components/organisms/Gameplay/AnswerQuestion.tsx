@@ -3,6 +3,10 @@ import {FC, FormEvent, useEffect, useState} from "react";
 import {Alex} from "@/components/organisms/Sprites/Alex";
 import {ButtonType} from "@/shared/types/Html.types";
 import {WagerAnswer} from "./WagerAnswer";
+import {CheckBoxForm} from "@/components/atoms/CheckBoxForm";
+import {Loading} from "@/components/atoms/Loading";
+import {set} from "zod";
+import {AlexHeader} from "@/components/organisms/Sprites/AlexHeader";
 
 
 // can be regular question or wager
@@ -14,8 +18,8 @@ export type AnswerQuestionProps={
     setScore:(arg:any)=>void
     questionCategory?:QuestionCategory
     tutorialState?:TutorialEnum
-
 }
+
 export const AnswerQuestion:FC<AnswerQuestionProps>=({question,onNextClick,questionCategory,score,setScore,tutorialState})=>{
 
     // for tutorial
@@ -25,39 +29,41 @@ export const AnswerQuestion:FC<AnswerQuestionProps>=({question,onNextClick,quest
     // for wager
     const [wagerAmount,setWagerAmount]=useState<number>(0)
 
-    // for tracking answer
-    const [answer,setAnswer]=useState("")
-
+    const [selectedOption, setSelectedOption]=useState<string | undefined>(undefined)
     const [answeredIncorrectly,setAnsweredIncorrectly]=useState(false);
+    const [loading,setLoading]=useState(false);
 
+    const [problemAccuracy,setProblemAccuracy]=useState<undefined | number>(undefined);
 
     const nextButton:ButtonType={
-        text: tutorialState!==TutorialEnum.Final?"Next":"Get started with a new game",
+        text: tutorialState!==TutorialEnum.Double?"Next":"Get started with a new game",
         onClick:onNextClick,
-        className:"bg-slate-700 py-2 px-4 rounded-md text-lg hover:bg-slate-800"
 
     }
     useEffect(()=>{
-        alert("refreshing")
         setWagerAmount(0)
         setAnsweredCorrectly(false)
         setAnsweredIncorrectly(false)
         setTutorialError(false)
-        setAnswer("")
     },[tutorialState])
 
     const handleAnswerSubmit=async(e:FormEvent<HTMLFormElement>)=>{
         e.preventDefault()
+        setLoading(true)
         // some logic to decide if is true or false -> make api call here
         const res = await fetch("/api/handleAnswerSubmit", {
             method: "POST",
             body: JSON.stringify({
                 question,
-                answer
+                answer:selectedOption
             }),
         });
 
-        const {isCorrect}=await res.json();
+        const {isCorrect, numAttempts,numCorrect}=await res.json();
+        const accuracy=(numCorrect/numAttempts )*100;
+        const stringacc=accuracy.toFixed(2)
+        setProblemAccuracy(parseFloat(stringacc));
+        setLoading(false)
         if (isCorrect){
             setAnsweredCorrectly(true)
             if (questionCategory=="wager")setScore((prev:number)=>prev+wagerAmount)
@@ -74,13 +80,20 @@ export const AnswerQuestion:FC<AnswerQuestionProps>=({question,onNextClick,quest
         }
     }
 
-    return <div className={"w-full text-center"}>
-            <div className={"bg-slate-600 border rounded-md p-2 py-4 text-white"}>
+    return <div className={"w-full h-full  py-10 text-center"}>
+            {
+                (typeof problemAccuracy!=="undefined" && !tutorialState) && <AlexHeader text={`${problemAccuracy}% of people have answered this correct`}/>
+            }
+            <div className={"bg-slate-600 border rounded-md p-2 text-white h-full"}>
                 {
-                    questionCategory==="wager" && score !=0 && (wagerAmount<5 || wagerAmount>=score) ? <WagerAnswer setWagerAmount={setWagerAmount} isFinalRound={tutorialState===TutorialEnum.Final}/> :
+                    questionCategory==="wager" && score !=0 && (wagerAmount<5 || wagerAmount>=score) ? <WagerAnswer setWagerAmount={setWagerAmount} /> :
                         <>
 
-                {answeredCorrectly
+                {loading ?
+                    <div className={"w-full h-full grid place-items-center"}>
+                        <Loading/>
+                    </div>
+                    : answeredCorrectly
                     ?<>
                         <Alex headerText={"Congratulations"} contentText={`You just made ${questionCategory==="wager" ?wagerAmount:question.value} dollars!`} button1={nextButton}/>
                     </>:
@@ -90,20 +103,9 @@ export const AnswerQuestion:FC<AnswerQuestionProps>=({question,onNextClick,quest
                         </>
                     :<>
                     <Alex headerText={`For ${questionCategory==="wager" ? wagerAmount:question.value} dollars`} contentText={question.text}/>
-                    <form className={"w-full"} onSubmit={handleAnswerSubmit}>
-                        {tutorialError &&<h1 className={"mt-1 text-red-500 font-semibold"}>You made an error, try again.</h1>}
-                    <div className={"flex items-center justify-center w-full  space-x-4 pt-8"}>
-                        <h1 className={"font-semibold "}>What is </h1>
-                            <input
-                                className=" shadow appearance-none border rounded w-6/12 max-w-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                type="text"
-                                placeholder="Type your Answer."
-                                value={answer}
-                                onChange={(e)=>setAnswer(e.target.value)}
-                            />
-
-                    </div>
-                    </form>
+                            {tutorialError &&<h1 className={"mt-1 text-red-500 font-semibold"}>You made an error, try again.</h1>}
+                    <CheckBoxForm values={question.answers} selectedValue={selectedOption} handleSubmit={handleAnswerSubmit}
+                                  setSelectedOption={setSelectedOption}/>
                 </>}
 
                         </>}
