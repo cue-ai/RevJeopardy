@@ -14,7 +14,7 @@ export const CheckBoxForm:FC<CheckBoxFormProps>=({values, selectedValue, handleS
             <div className="space-y-4 space-x-6">
                 {
                     values.map((value)=>(
-                        <label className="inline-flex items-center">
+                        <label className="inline-flex items-center" key={value}>
                             <input type="checkbox" className="cursor-pointer  h-5 w-5 text-blue-600 rounded-lg "  checked={selectedValue === value}
                                    onChange={()=>{setSelectedOption(value)} }/>
                             <span className="ml-2 tracking-widest text-sm">{value}</span>
