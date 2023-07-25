@@ -7,7 +7,7 @@ import {tutorialQuestions} from "@/shared/questions/tutorialQuestions";
 import {Alex} from "@/components/organisms/Sprites/Alex";
 import {ButtonType} from "@/shared/types/Html.types";
 import {StandardJeopardy} from "@/components/organisms/Gameplay/StandardJeopardy";
-import {FinalRound} from "@/components/organisms/Gameplay/FinalRound";
+
 
 export const Gameplay:FC=()=>{
 
@@ -17,7 +17,6 @@ export const Gameplay:FC=()=>{
     const introButton:ButtonType={
         text: "Choose my first question",
         onClick:()=>setGameMode("standard"),
-        className:""
     }
     console.log(gameMode)
     return (<div className={"w-full h-full"}>
