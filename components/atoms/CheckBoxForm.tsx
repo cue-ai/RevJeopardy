@@ -8,10 +8,10 @@ export type CheckBoxFormProps={
 }
 
 export const CheckBoxForm:FC<CheckBoxFormProps>=({values, selectedValue, handleSubmit, setSelectedOption})=>{
-    const handleClick=()=>{}
+
     return (
         <div>
-        <form className=" p-6" onSubmit={handleSubmit}>
+        <form className="bg-red-300 p-6" onSubmit={handleSubmit}>
             <div className="space-y-4 space-x-6">
                 {
                     values.map((value)=>(

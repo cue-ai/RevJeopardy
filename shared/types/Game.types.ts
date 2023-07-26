@@ -48,3 +48,9 @@ export type DailyDouble={
     category:RevenueOperationsCategory,
     value:QuestionValue
 }
+
+export type LeaderboardEntry={
+    name:string;
+    email:string;
+    score:number;
+}
