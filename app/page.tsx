@@ -12,7 +12,7 @@ export default function Home() {
     const [currentState,setCurrentState]=useState<CurrentState>("intro")
 
   return (
-    <main className="flex w-screen h-screen flex-col items-center justify-between p-24">
+    <main className="flex w-screen h-screen flex-col items-center justify-between py-24 px-2 md:px-24">
         <CurrentStateContext.Provider value={{currentState,setCurrentState}}>
             <div className={"w-full h-full"}>
                 {currentState==="intro" ?<Intro/>:

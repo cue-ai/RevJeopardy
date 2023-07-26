@@ -19,26 +19,26 @@ const {text1:header,text2:content}=useTypingAnimationTwoElements(headerText??"",
     return (
         <div className={"w-full grid justify-items-center "}>
             <div className={"w-full flex justify-center pt-5"}>
-                    <img src={"/alex.png"} className={"w-3/12"}/>
+                    <img src={"/alex.png"} className={"md:w-3/12 w-10/12"}/>
             </div>
-            <div className={"mt-10 px-10 w-full text-center text-5xl font-light"}>
-                {headerText && <h1 className={`tracking-wide font-light font-sans-serif`} >{header}</h1>}
+            <div className={"mt-10 md:px-10 w-full text-center  font-light"}>
+                {headerText && <h1 className={`tracking-wide font-light font-sans-serif md:text-5xl text-2xl`} >{header}</h1>}
 
             </div>
 
             <div className={"mt-10 px-10 text-center "}>
-                <p className={"text-2xl tracking-wider"}>
+                <p className={"md:text-2xl text:md tracking-wider"}>
                     {content}
                 </p>
             </div>
-            {(button1 || button2) &&<div className={"my-12 flex w-6/12 justify-around"}>
-                {button1 && <button className={"tracking-widest bg-slate-700 py-2 px-4 rounded-md text-lg hover:bg-slate-800 border-white"}
+            {(button1 || button2) &&<div className={"my-12 flex w-6/12 justify-around space-x-2"}>
+                {button1 && <button className={"tracking-widest bg-slate-700 py-2 px-2 md:px-4 rounded-md text-lg hover:bg-slate-800 border-white"}
                          onClick={button1.onClick}
                 >
                     {button1.text}
                 </button>}
 
-                {button2 &&<button className={"tracking-widest bg-slate-700 py-2 px-4 rounded-md text-lg hover:bg-slate-800"}
+                {button2 &&<button className={"tracking-widest bg-slate-700 py-2  px-2 md:px-4 rounded-md text-lg hover:bg-slate-800"}
                                    onClick={button2.onClick}
                 >
                     {button2.text}

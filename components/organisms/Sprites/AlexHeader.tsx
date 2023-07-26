@@ -19,7 +19,7 @@ export const AlexHeader:FC<AlexHeaderProps>=({text})=>{
                 <div className={"font-sans flex items-center justify-start text-sm ml-8 text-white  max-w-xs"}>
                     {content}
                 </div>
-                <div className="absolute top-0 right-0 mx-4 my-1 cursor-pointer">
+                <div className="absolute top-0 right-0 md:mx-4 mx-2 my-1 cursor-pointer">
                     <span className="text-2xl text-red-400 hover:text-red-600" onClick={()=>{
                         setIsHidden(true)
                     }}>×</span>
