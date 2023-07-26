@@ -1,5 +1,5 @@
 
-export type CurrentState="intro"| "tutorial"|"game"
+export type CurrentState="intro"| "tutorial"|"game"|"leaderboard"
 
 export type GameMode="intro"|"standard" |"gameOver"
 
@@ -53,4 +53,5 @@ export type LeaderboardEntry={
     name:string;
     email:string;
     score:number;
+    _id?:string
 }

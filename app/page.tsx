@@ -6,6 +6,7 @@ import {CurrentState} from "@/shared/types/Game.types";
 import {CurrentStateContext} from "@/components/Contexts/CurrentStateContext";
 import {Tutorial} from "@/components/organisms/Tutorial/Tutorial";
 import {Gameplay} from "@/components/organisms/Gameplay/Gameplay";
+import {Leaderboard} from "@/components/organisms/Leaderboard";
 
 export default function Home() {
 
@@ -16,9 +17,9 @@ export default function Home() {
         <CurrentStateContext.Provider value={{currentState,setCurrentState}}>
             <div className={"w-full h-full"}>
                 {currentState==="intro" ?<Intro/>:
+                    currentState==="leaderboard"? <Leaderboard setCurrentState={setCurrentState}/>:
                 currentState==="tutorial"?<Tutorial setCurrentState={setCurrentState} />
                     :<Gameplay/>}
-                {/*{currentState==="intro" &&<Intro/>}*/}
 
             </div>
         </CurrentStateContext.Provider>

@@ -1,5 +1,6 @@
 import {NextResponse} from "next/server";
 import insertMongo from "@/shared/mongo/insertMongo";
+import queryMongo from "@/shared/mongo/queryMongo";
 
 export async function POST(req: Request) {
     try {
@@ -11,6 +12,21 @@ export async function POST(req: Request) {
 
         // get shareableLink
         return NextResponse.json({url})
+    } catch (err) {
+        console.log(err)
+        return new NextResponse("Server Error", { status: 520 });
+    }
+}
+
+export async function GET(req: Request) {
+    try {
+
+        const res =await queryMongo("revJeopardyLeaderboard");
+        const sorted=res.sort((a, b) => b.score - a.score)
+        const topTen=sorted.slice(0,10);
+
+        // get shareableLink
+        return NextResponse.json({topTen})
     } catch (err) {
         console.log(err)
         return new NextResponse("Server Error", { status: 520 });

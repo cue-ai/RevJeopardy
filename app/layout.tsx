@@ -57,7 +57,7 @@ export default function RootLayout({
       <body className={`${inter.className}`}>
       <div
           style={{ backgroundImage: `url("/jeopardy.jpeg")` }}
-          className="flex flex-col h-screen w-screen  bg-cover "
+          // className="flex flex-col  min-h-screen w-screen bg-red-400 "
 
       >
         <main className={`flex flex-col flex-1 ${swiss.variable} font-sans-serif`}>{children}</main>
