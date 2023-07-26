@@ -32,7 +32,7 @@ export const JeopardyBoardTutorial:FC<JeopardyBoardTutorialProps>=({tutorialStat
                         return (
                         <div key={j} className={`grid place-content-center w-full h-28  
                         ${isClickable ? "bg-blue-700 hover:bg-blue-600": "bg-blue-400"}
-                         text-amber-300 text-3xl my-1 cursor-pointer `}
+                         text-amber-300 text-5xl my-1 cursor-pointer `}
                              onClick={()=>{
                                  if (!isClickable)return;
                                  setSelectedQuestion(q);

@@ -1,5 +1,4 @@
 import { MongoClient } from 'mongodb';
-
 async function updateMongoDB(collectionName: string, query = {}, update = {}) {
     const mongoURI = process.env.DB_URL as string;
     const dbName = process.env.DB_NAME as string;
