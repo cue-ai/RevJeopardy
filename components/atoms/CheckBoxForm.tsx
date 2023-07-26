@@ -11,7 +11,7 @@ export const CheckBoxForm:FC<CheckBoxFormProps>=({values, selectedValue, handleS
 
     return (
         <div>
-        <form className="bg-red-300 p-6" onSubmit={handleSubmit}>
+        <form className=" p-6" onSubmit={handleSubmit}>
             <div className="space-y-4 space-x-6">
                 {
                     values.map((value)=>(

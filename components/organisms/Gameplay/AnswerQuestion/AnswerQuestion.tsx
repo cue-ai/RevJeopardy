@@ -38,7 +38,6 @@ export const AnswerQuestion:FC<AnswerQuestionProps>=({question,onNextClick,quest
 
     // for timer
     const onTimeOver=()=>{
-
         if (tutorialState)return
         if (loading || answeredIncorrectly || answeredCorrectly)return;
         handleAnswerSubmit(undefined);
