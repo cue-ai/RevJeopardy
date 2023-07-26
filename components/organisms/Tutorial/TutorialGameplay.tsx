@@ -2,7 +2,7 @@ import {JeopardyBoardTutorial} from "@/components/organisms/Sprites/JeopardyBoar
 import {FC, useState} from "react";
 import {AlexHeader} from "@/components/organisms/Sprites/AlexHeader";
 import {CurrentState, Question, TutorialEnum} from "@/shared/types/Game.types";
-import {AnswerQuestion} from "@/components/organisms/Gameplay/AnswerQuestion";
+import {AnswerQuestion} from "@/components/organisms/Gameplay/AnswerQuestion/AnswerQuestion";
 import {tutorialQuestions} from "@/shared/questions/tutorialQuestions";
 
 export type TutorialGameplayProps={
@@ -26,7 +26,7 @@ export const TutorialGameplay:FC<TutorialGameplayProps>=({setTutorialState,tutor
 
 
     }
-        return (<div className={"w-full h-full"}>
+        return (<div className={"w-full h-full "}>
             {tutorialState===TutorialEnum.FirstQuestion && <AlexHeader text={`Choose a dollar amount/category to get a question.
       The more the dollar amount, the harder the question.`}/>}
 
@@ -35,7 +35,7 @@ export const TutorialGameplay:FC<TutorialGameplayProps>=({setTutorialState,tutor
 
 
             {
-              (  selectedQuestion)? <AnswerQuestion question={selectedQuestion as Question} onNextClick={onNextClick} score={score}
+              (selectedQuestion)? <AnswerQuestion question={selectedQuestion as Question} onNextClick={onNextClick} score={score}
                                                     questionCategory={tutorialState=== TutorialEnum.FirstQuestion ? "regular":"wager"} tutorialState={tutorialState} setScore={setScore}/>
                     : <JeopardyBoardTutorial tutorialState={tutorialState} setSelectedQuestion={setSelectedQuestion} score={score}/>
             }

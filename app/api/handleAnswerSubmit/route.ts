@@ -5,8 +5,9 @@ import { ObjectId } from "mongodb";
 export async function POST(req: Request) {
     try {
         const {question,answer } = await req.json();
+
         const s1 = question.answer.toLowerCase();
-        const s2 = answer.toLowerCase();
+        const s2 = answer? answer.toLowerCase(): "";
         const correct=s1==s2;
 
         const numAttempts=question.numAttempts+1;

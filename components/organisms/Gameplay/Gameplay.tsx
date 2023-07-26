@@ -2,7 +2,7 @@ import {JeopardyBoard} from "@/components/organisms/Sprites/JeopardyBoard";
 import {FC, useState} from "react";
 import {AlexHeader} from "@/components/organisms/Sprites/AlexHeader";
 import {CurrentState, GameMode, Question, TutorialEnum} from "@/shared/types/Game.types";
-import {AnswerQuestion} from "@/components/organisms/Gameplay/AnswerQuestion";
+import {AnswerQuestion} from "@/components/organisms/Gameplay/AnswerQuestion/AnswerQuestion";
 import {tutorialQuestions} from "@/shared/questions/tutorialQuestions";
 import {Alex} from "@/components/organisms/Sprites/Alex";
 import {ButtonType} from "@/shared/types/Html.types";
@@ -18,7 +18,7 @@ export const Gameplay:FC=()=>{
         text: "Choose my first question",
         onClick:()=>setGameMode("standard"),
     }
-    console.log(gameMode)
+
     return (<div className={"w-full h-full"}>
         {gameMode==="intro" &&
             <div className={"w-full  bg-slate-600 text-white rounded-md py-8 p-2 border"}>

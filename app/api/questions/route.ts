@@ -33,7 +33,8 @@ function generateCategoryTypeArray(values:number[],categories: string[], questio
             let valueQuestions=groupedQuestions.get(value)??[];
             valueQuestions=valueQuestions.filter((question)=>question.category===category)
             if (valueQuestions.length > 0) {
-                categoryQuestions.push(valueQuestions[0]);
+                let index=(Math.floor(Math.random() * valueQuestions.length))
+                categoryQuestions.push(valueQuestions[index]);
             }
         }
         categoryTypeArray.push({ name: category, questions: categoryQuestions });
@@ -44,22 +45,7 @@ function generateCategoryTypeArray(values:number[],categories: string[], questio
 export async function POST(req: Request) {
     try {
         const {round,prevQuestions,finalCategory } = await req.json();
-
-        if (round==="final"){
-            let questions = await queryMongo("revJeopardy");
-            questions=filterChosenQuestions(questions,prevQuestions);
-            questions=questions.filter((question)=>question.value===2000
-                && question.category===finalCategory);
-
-            const randomIndex = Math.floor(Math.random() * questions.length);
-            const question=questions[randomIndex]
-            return NextResponse.json({question});
-        }
-
-        let values = [200, 400, 600, 800, 1000];
-        if (round !== "standard") {
-            values = [400, 800, 1200, 1600, 2000];
-        }
+        let values = [200, 400, 800, 1000];
         let questions = await queryMongo("revJeopardy");
         questions=filterChosenQuestions(questions,prevQuestions);
         const categories=generateCategoryTypeArray(values,revenueOperationsCategories,questions,prevQuestions);

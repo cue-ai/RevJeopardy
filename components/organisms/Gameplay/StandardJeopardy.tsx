@@ -7,7 +7,7 @@ import {
     TutorialEnum
 } from "@/shared/types/Game.types";
 import {AlexHeader} from "@/components/organisms/Sprites/AlexHeader";
-import {AnswerQuestion} from "@/components/organisms/Gameplay/AnswerQuestion";
+import {AnswerQuestion} from "@/components/organisms/Gameplay/AnswerQuestion/AnswerQuestion";
 import {JeopardyBoard, JeopardyBoardTutorial} from "@/components/organisms/Sprites/JeopardyBoard";
 import {FC, useEffect, useState} from "react";
 import {getRandomCategoryAndValue} from "@/shared/gameplay/helperFunctions";
@@ -72,7 +72,7 @@ export const StandardJeopardy:FC<StandardJeopardyProps>=({gameMode,score,setScor
         <AlexHeader text={
       "The more the dollar amount, the harder the question."  }/>
         {
-            isLoading? <div className={"w-full h-full grid place-content-center"}>
+            isLoading? <div className={"w-full  h-full grid place-content-center"}>
                     <Loading/>
                 </div>:
         <>
