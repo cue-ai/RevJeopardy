@@ -38,11 +38,17 @@ export const AnswerQuestion:FC<AnswerQuestionProps>=({question,onNextClick,quest
 
     // for timer
     const onTimeOver=()=>{
+
         if (tutorialState)return
         if (loading || answeredIncorrectly || answeredCorrectly)return;
+        if (questionCategory==="wager" &&  (wagerAmount<5 || wagerAmount>=score)){
+            setWagerAmount(5);
+            setTimer(10);
+            return;
+        }
         handleAnswerSubmit(undefined);
     }
-    const timer=useTimer(10,onTimeOver);
+    const {timer,setTimer}=useTimer(10,onTimeOver);
     const nextButton:ButtonType={
         text: tutorialState!==TutorialEnum.Double?"Next":"Get started with a new game",
         onClick:onNextClick,
@@ -99,7 +105,13 @@ export const AnswerQuestion:FC<AnswerQuestionProps>=({question,onNextClick,quest
                 (wagerAmount<5 || wagerAmount>=score)) ? "pb-8":""}`}>
                 {/*WAGER*/}
                 {
-                    questionCategory==="wager" && score !=0 && (wagerAmount<5 || wagerAmount>=score) ? <WagerAnswer setWagerAmount={setWagerAmount} /> :
+                    questionCategory==="wager" && score !=0 && (wagerAmount<5 || wagerAmount>=score) ?
+                        <div className={"w-full h-full text center"}>
+                            <h1 className={"text-white text-3xl mt-2"}>${score}</h1>
+                        <WagerAnswer setWagerAmount={setWagerAmount} />
+                            {!tutorialState && <h1 className={"text-white text-lg mt-2"}>{timer}</h1>}
+                        </div>
+                        :
                         <>
 
                 {loading ?

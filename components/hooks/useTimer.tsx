@@ -8,5 +8,5 @@ export const useTimer=(seconds:number=10, fun:any)=>{
         }
         else setTimeout(() => setTimer((prev)=>prev-1), 1000);
     },[timer])
-    return timer;
+    return {timer,setTimer};
 }
