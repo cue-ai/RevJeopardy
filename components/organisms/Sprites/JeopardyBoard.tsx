@@ -64,7 +64,7 @@ export const JeopardyBoard=({categories,setSelectedQuestion,score,prevQuestions}
                         return (
                             <div key={j} className={` grid place-content-center w-full h-28  
                         ${isClickable ? "bg-blue-700 hover:bg-blue-600 cursor-pointer": "bg-blue-400"}
-                         text-amber-300 text-2xl md:text-6xl my-1 `}
+                         text-amber-300 text-2xl md:text-5xl my-1 `}
                                  onClick={() => {
                                      if (!isClickable)return;
                                      setSelectedQuestion(question)
