@@ -6,7 +6,7 @@ export const runtime = 'edge';
 
 export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
-    const user = searchParams.get('user');
+    const name = searchParams.get('name');
     const score=searchParams.get('score')
 
     return new ImageResponse(
@@ -26,11 +26,11 @@ export async function GET(request: Request) {
                 }}
             >
 
-                {(user )? (
+                {(name )? (
                     <div
                         tw={"w-full flex flex-col items-center"}
                     >
-                        <p tw={"text-xl text-slate-400"}>{user}</p>
+                        <p tw={"text-xl text-slate-400"}>{name}</p>
 
                         <div tw={"w-full flex justify-center overflow-auto"}>
                                <h1 tw={"font-medium text-white font-mono text-4xl"}>{`Won ${score} dollars.`}</h1>
