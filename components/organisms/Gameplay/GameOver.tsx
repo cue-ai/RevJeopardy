@@ -88,7 +88,7 @@ export const GameOver:FC<GameOverProps>=({score})=>{
 
 
             <form className={"w-6/12 mt-10 space-y-4 flex flex-col justify-center items-center"} onSubmit={handleSubmit}>
-            <input type="submit" id="first_name"
+            <input  id="first_name"
                    className="tracking-widest bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                    placeholder="Name" required
                    minLength={1}
