@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9116e019-c78b-4f86-9836-1a8ea090f5c4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/app/ogShare/route.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ogShare/route.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/organisms/Gameplay/AnswerQuestion/DisplayQuestion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/organisms/Gameplay/AnswerQuestion/DisplayQuestion.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +67,7 @@
       <workItem from="1689879667230" duration="323000" />
       <workItem from="1689880152975" duration="31969000" />
       <workItem from="1689977153818" duration="74750000" />
-      <workItem from="1690477826197" duration="4202000" />
+      <workItem from="1690477826197" duration="6386000" />
     </task>
     <servers />
   </component>
