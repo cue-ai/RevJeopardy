@@ -16,6 +16,10 @@ export const GameOver:FC<GameOverProps>=({score})=>{
     const handleSubmit=async(e: any)=>{
         setIsFirstTime(false)
         e.preventDefault()
+        if (name.length<3){
+            alert("Name must be at least 3 characters");
+            return
+        }
         if (submitted) {
             await navigator.clipboard.writeText(savedUrl);
             return
@@ -35,7 +39,12 @@ export const GameOver:FC<GameOverProps>=({score})=>{
         setSubmitted(true)
     }
     const shareScore=async(e:any)=>{
+
         e.preventDefault();
+        if (name.length<3){
+            alert("Name must be at least 3 characters");
+            return
+        }
         setIsFirstTime(false)
         if (savedUrl){
             await navigator.clipboard.writeText(savedUrl);
