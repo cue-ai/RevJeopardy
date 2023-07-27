@@ -5,6 +5,7 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 import localFont from '@next/font/local'
+import Script from "next/script";
 
 
 const swiss = localFont({
@@ -54,6 +55,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+    <head>
+        {process.env.NODE_ENV === "production" && <Script id="clarityScript">
+            {
+                `(function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "i5wlwjw4tn");`
+            }
+        </Script>}
+    </head>
       <body className={`${inter.className}`}>
       <div
           style={{ backgroundImage: `url("/jeopardy.jpeg")` }}
