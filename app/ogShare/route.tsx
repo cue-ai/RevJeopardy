@@ -44,7 +44,7 @@ export async function GET(request: Request) {
                     </div>
                 ) : (
                     <h1 tw={"text-slate-400 font-bold text-4xl mt-8"}>
-                        No query found
+                        No user found
                     </h1>
                 )}
             </div>
