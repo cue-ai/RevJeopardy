@@ -17,7 +17,7 @@ export async function generateMetadata(
         data=await res.json();
     }
     catch(err){
-         data={email:"",score:0,name:""}
+         data={score:0,name:""}
     }
 
     return {
@@ -25,13 +25,13 @@ export async function generateMetadata(
             title: "Revenue based Jeopardy",
             description:
                 "A RevOps twist on the classic game show, Jeopardy",
-            images: [`https://www.revjeopardy.com/ogShare?email=${data.email}&score=${data.score}&name=${data.name}`],
+            images: [`https://www.revjeopardy.com/ogShare?score=${data.score}&name=${data.name}`],
         },
         twitter: {
             card: "summary_large_image",
             title: "Revenue based Jeopardy",
             description: 'A RevOps twist on the classic game show, Jeopardy',
-            images: [`https://www.revjeopardy.com/ogShare?email=${data.email}&score=${data.score}&name=${data.name}`],
+            images: [`https://www.revjeopardy.com/ogShare?score=${data.score}&name=${data.name}`],
         },
     }
 }
