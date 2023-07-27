@@ -18,7 +18,7 @@ export const Intro=()=>{
         onClick:()=>setCurrentState("game"),
     }
 
-    return <div className={"w-full bg-slate-600 p-4 border rounded-md text-white grid justify-items-center font-sans-serif"}>
+    return <div className={"w-full bg-slate-500 p-4 border rounded-md text-white grid justify-items-center font-sans-serif"}>
         <div className={"w-full h-full"}>
             <button  className={"tracking-widest bg-slate-700 py-2  px-2 md:px-4 rounded-md text-lg hover:bg-slate-800"}
                      onClick={()=>setCurrentState("leaderboard")}

@@ -22,7 +22,7 @@ export const Tutorial:FC<TutorialProps>=({setCurrentState})=>{
 
 
         return <div className={"w-full h-full grid justify-items-center "}>
-                {tutorialState===TutorialEnum.Intro ?<div className={"w-full  bg-slate-600 text-white rounded-md py-8 p-2 border"}>
+                {tutorialState===TutorialEnum.Intro ?<div className={"w-full  bg-slate-500 text-white rounded-md py-8 p-2 border"}>
                         <Alex headerText={headerTutorialText} contentText={textContent}
                               button1={NextButton}
                              />

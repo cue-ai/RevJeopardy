@@ -6,8 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="9116e019-c78b-4f86-9836-1a8ea090f5c4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ogShare/route.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/ogShare/route.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/leaderboard/[id]/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/leaderboard/[id]/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/leaderboard/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/leaderboard/route.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/score/[id]/Score.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/score/[id]/Score.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/organisms/Gameplay/AnswerQuestion/AnswerQuestion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/organisms/Gameplay/AnswerQuestion/AnswerQuestion.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/organisms/Gameplay/GameOver.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/organisms/Gameplay/GameOver.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/organisms/Gameplay/Gameplay.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/organisms/Gameplay/Gameplay.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/organisms/Gameplay/StandardJeopardy.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/organisms/Gameplay/StandardJeopardy.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/organisms/Intro.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/organisms/Intro.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/organisms/Leaderboard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/organisms/Leaderboard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/organisms/Sprites/Alex.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/organisms/Sprites/Alex.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/organisms/Sprites/AlexHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/organisms/Sprites/AlexHeader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/organisms/Tutorial/Tutorial.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/organisms/Tutorial/Tutorial.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/types/Game.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/shared/types/Game.types.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,22 +39,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/anirudhramprasad/Code+Past_projects/Cue/revjeopardy/app",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "/Users/anirudhramprasad/Code+Past_projects/Cue/revjeopardy/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/anirudhramprasad/Code+Past_projects/Cue/revjeopardy/app&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/anirudhramprasad/Code+Past_projects/Cue/revjeopardy/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app" />
@@ -66,7 +77,8 @@
       <updated>1689879664202</updated>
       <workItem from="1689879667230" duration="323000" />
       <workItem from="1689880152975" duration="31969000" />
-      <workItem from="1689977153818" duration="70435000" />
+      <workItem from="1689977153818" duration="74750000" />
+      <workItem from="1690477826197" duration="1226000" />
     </task>
     <servers />
   </component>

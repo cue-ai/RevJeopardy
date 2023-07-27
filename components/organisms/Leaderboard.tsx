@@ -22,7 +22,7 @@ export const Leaderboard:FC<LeaderboardProps>=({setCurrentState})=>{
         void getTopTen()
     },[])
 
-    return (<div className={"relative w-full min-h-full mt-4 text-center bg-slate-600 px-4 py-2 pb-0 rounded-md border"}>
+    return (<div className={"relative md:w-full w-8/12 min-h-full mt-4 text-center bg-slate-500 px-4 py-2 pb-0 rounded-md border"}>
                 <button  className={"absolute left-4 top-2 text-white bg-slate-700 py-2  px-2 md:px-4 rounded-md text-xs md:text-lg hover:bg-slate-800 my-4"}
                          onClick={()=>setCurrentState("intro")}
                 >
@@ -35,9 +35,8 @@ export const Leaderboard:FC<LeaderboardProps>=({setCurrentState})=>{
 
             <table className="md:mt-0 mt-8 w-full">
             <thead>
-            <tr className="bg-gray-200 text-gray-600 uppercase text-sm md:text-lg leading-normal">
+            <tr className="bg-gray-200 text-gray-600 uppercase text-sm md: leading-normal">
                 <th className="py-3 px-6 text-left">Name</th>
-                <th className="py-3 px-6 text-left">Email</th>
                 <th className="py-3 px-6 text-left">Score</th>
             </tr>
             </thead>
@@ -47,11 +46,6 @@ export const Leaderboard:FC<LeaderboardProps>=({setCurrentState})=>{
                     <td className="py-3 px-6 text-left whitespace-nowrap">
                         <div className="flex items-center">
                             <span className=" md:text-lg tracking-wide text-xs">{item.name}</span>
-                        </div>
-                    </td>
-                    <td className="py-3 px-6 text-left">
-                        <div className="flex items-center">
-                            <span className={"md:text-lg tracking-wide text-xs"}>{item.email}</span>
                         </div>
                     </td>
                     <td className="py-3 px-6 text-left">

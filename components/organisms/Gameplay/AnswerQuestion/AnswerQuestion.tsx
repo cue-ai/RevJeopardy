@@ -20,9 +20,12 @@ export type AnswerQuestionProps={
     setScore:(arg:any)=>void
     questionCategory?:QuestionCategory
     tutorialState?:TutorialEnum
+    setLivesRemaining?:(arg:any)=>void;
 }
 
-export const AnswerQuestion:FC<AnswerQuestionProps>=({question,onNextClick,questionCategory,score,setScore,tutorialState})=>{
+export const AnswerQuestion:FC<AnswerQuestionProps>=({question,onNextClick,
+                                                         questionCategory,score,
+                                                         setScore,tutorialState,setLivesRemaining})=>{
 
     // for tutorial
     const [answeredCorrectly,setAnsweredCorrectly]=useState<boolean >(false)
@@ -35,7 +38,7 @@ export const AnswerQuestion:FC<AnswerQuestionProps>=({question,onNextClick,quest
     const [answeredIncorrectly,setAnsweredIncorrectly]=useState(false);
     const [loading,setLoading]=useState(false);
     const [problemAccuracy,setProblemAccuracy]=useState<undefined | number>(undefined);
-
+    const [numCorrect,setNumCorrect]=useState(0);
     // for timer
     const onTimeOver=()=>{
 
@@ -78,6 +81,7 @@ export const AnswerQuestion:FC<AnswerQuestionProps>=({question,onNextClick,quest
         const stringacc=accuracy.toFixed(2)
         setProblemAccuracy(parseFloat(stringacc));
         setLoading(false)
+        setNumCorrect(numCorrect)
         if (isCorrect){
             setAnsweredCorrectly(true)
             if (questionCategory=="wager")setScore((prev:number)=>prev+wagerAmount)
@@ -90,6 +94,7 @@ export const AnswerQuestion:FC<AnswerQuestionProps>=({question,onNextClick,quest
         }
         else {
             setAnsweredIncorrectly(true);
+            setLivesRemaining?.((prev:any)=>prev-1);
             if (questionCategory=="wager")setScore((prev:number)=>Math.max(prev-wagerAmount,0))
         }
     }
@@ -101,7 +106,8 @@ export const AnswerQuestion:FC<AnswerQuestionProps>=({question,onNextClick,quest
             }
 
 
-            <div className={`bg-slate-600 border rounded-md p-2 text-white h-full ${(questionCategory==="wager" &&
+            <div className={`bg-slate-500 border rounded-md p-2 text-white 
+             ${(!answeredCorrectly && !answeredIncorrectly)?"h-full":""} ${(questionCategory==="wager" &&
                 (wagerAmount<5 || wagerAmount>=score)) ? "pb-8":""}`}>
                 {/*WAGER*/}
                 {
@@ -122,10 +128,12 @@ export const AnswerQuestion:FC<AnswerQuestionProps>=({question,onNextClick,quest
                     ?<>
                             <Confetti/>
                         <Alex headerText={"Congratulations"} contentText={`You just made ${questionCategory==="wager" ?wagerAmount:question.value} dollars!`} button1={nextButton}/>
-                    </>:
+                        <h1 className={"tracking-wider text-slate-800 text-md"}>{`${numCorrect} people got this question right`}</h1>
+                        </>:
                     answeredIncorrectly?
-                        <>
-                            <Alex headerText={"Oops"} contentText={`That was the wrong answer, better luck next time.`} button1={nextButton}/>
+                        < >
+                            <Alex headerText={"Oops"} contentText={`The correct answer was ${question.answer}`} button1={nextButton}/>
+                            <h1 className={"tracking-wider text-slate-800 text-md"}>{`${numCorrect} people got this question right`}</h1>
                         </>
                     :<div className={"w-full h-full"}>
                        <DisplayQuestion numDollars={questionCategory==="wager" ? wagerAmount:question.value}

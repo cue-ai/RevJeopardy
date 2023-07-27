@@ -12,7 +12,7 @@ export const AlexHeader:FC<AlexHeaderProps>=({text})=>{
         setIsHidden((false))
     },[text])
     return(<div className={`${isHidden ? "hidden":"fixed"} top-0 right-0`}>
-            <div className={"flex bg-slate-600 m-10 p-4 border rounded-md relative"}>
+            <div className={"flex bg-slate-500 m-10 p-4 border rounded-md relative"}>
                 <div>
                     <img src={"/alex.png"} className={"w-40"}/>
                 </div>

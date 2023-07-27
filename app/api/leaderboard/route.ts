@@ -4,8 +4,12 @@ import queryMongo from "@/shared/mongo/queryMongo";
 
 export async function POST(req: Request) {
     try {
-        const {email,name,score } = await req.json();
-
+        const {email,name,score, getRanking } = await req.json();
+        if (getRanking){
+            const res =await queryMongo("revJeopardyLeaderboard");
+            const better=res.filter((details)=>score>details.score);
+            return NextResponse.json({rank:better.length/res.length})
+        }
         const res =await insertMongo("revJeopardyLeaderboard", {email,name,score});
         const id=res.insertedId.toString();
         const url=process.env.FRONTEND_URL+"score/"+id;

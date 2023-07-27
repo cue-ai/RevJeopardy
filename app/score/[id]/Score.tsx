@@ -17,18 +17,22 @@ export const Score:FC<ScoreProps>=({id})=>{
                 method: "GET",
             });
             const data=await res.json();
+            console.log(data)
             setUserDetails(data)
         }
         catch(err){
+            console.log(err)
         }
     };
 
     useEffect(()=>{
+
         void getUserData()
     },[])
     const router = useRouter()
-    return <div className={`bg-slate-600 border rounded-md text-white ${!userDetails ? "px-12 py-16":"py-16"} text-white text-center`}>
-        {userDetails?.name && <Alex headerText={`${userDetails.name} has a score of ${userDetails.score}`} contentText={`Hit them up at ${userDetails.email}`}/>}
+    return <div className={`bg-slate-500 border rounded-md text-white ${!userDetails ? "px-12 py-16":"py-16"} text-white text-center`}>
+        {userDetails?._id && <Alex headerText={`${userDetails.name} has a score of ${userDetails.score}`}
+                                    contentText={`Better than ${userDetails?.rank}% of people who played RevJeopardy.`}/>}
         <button className="tracking-widest mt-6 px-4 py-2 bg-blue-500 hover:bg-blue-400 text-white rounded" onClick={()=>{
             router.push("/")
         }}>

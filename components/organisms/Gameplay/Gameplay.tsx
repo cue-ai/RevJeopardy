@@ -22,7 +22,7 @@ export const Gameplay:FC=()=>{
 
     return (<div className={"w-full h-full"}>
         {gameMode==="intro" &&
-            <div className={"w-full  bg-slate-600 text-white rounded-md py-8 p-2 border"}>
+            <div className={"w-full  bg-slate-500 text-white rounded-md py-8 p-2 border"}>
                 <Alex headerText={`Welcome to the first round of RevJeopardy.` }
         contentText={"Click the button below to start playing"} button1={introButton}/>
             </div>

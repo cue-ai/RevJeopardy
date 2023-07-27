@@ -51,7 +51,7 @@ export type DailyDouble={
 
 export type LeaderboardEntry={
     name:string;
-    email:string;
     score:number;
+    rank?:number
     _id?:string
 }
