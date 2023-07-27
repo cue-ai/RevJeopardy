@@ -27,7 +27,6 @@ export const StandardJeopardy:FC<StandardJeopardyProps>=({gameMode,score,setScor
     const [categories,setCategories]=useState<CategoryType[]>([]);
     const [dailyDouble,setDailyDouble]=useState<DailyDouble[]>([])
     const [isLoading,setIsLoading]=useState(false)
-    console.log(dailyDouble)
     const getQuestions=async()=>{
         setIsLoading(true);
         const res = await fetch("/api/questions", {
@@ -40,8 +39,7 @@ export const StandardJeopardy:FC<StandardJeopardyProps>=({gameMode,score,setScor
 
         const {categories}=await res.json();
         setCategories(categories)
-        setDailyDouble(getRandomCategoryAndValue(categories, gameMode==="standard" ?1:2));
-
+        // setDailyDouble(getRandomCategoryAndValue(categories, gameMode==="standard" ?1:2));
         setIsLoading(false);
     }
 
