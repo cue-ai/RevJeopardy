@@ -39,10 +39,10 @@ export async function generateMetadata(
         },
         twitter: {
             card: "summary_large_image",
-            title: "Salesforce SOQL Generator",
+            title: "Revenue based Jeopardy",
             description:
-                '"Transforming English natural language into Salesforce SOQL queries',
-            images: ["https://www.asksalesforce.ai/og"],
+                'A RevOps twist on the classic game show, Jeopardy',
+            images: [`${process.env.FRONTEND_URL}og`],
         },
     }
 
