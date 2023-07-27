@@ -9,9 +9,10 @@ export async function generateMetadata(
     { params }: MetaProps
 ): Promise<Metadata> {
     const id = params.id
+
     let data;
     try{
-        const res = await fetch(`/api/leaderboard/${id}`, {
+        const res = await fetch(`https://www.revjeopardy.com/api/leaderboard/${id}`, {
             method: "GET",
         });
         data=await res.json();
@@ -19,7 +20,6 @@ export async function generateMetadata(
     catch(err){
          data={score:0,name:""}
     }
-
     return {
         openGraph: {
             title: "Revenue based Jeopardy",

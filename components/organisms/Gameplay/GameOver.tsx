@@ -21,7 +21,7 @@ export const GameOver:FC<GameOverProps>=({score})=>{
             return
         }
         if (submitted) {
-            await navigator.clipboard.writeText(savedUrl);
+            // await navigator.clipboard.writeText(savedUrl);
             return
         }
         setLoading(true)
@@ -30,7 +30,6 @@ export const GameOver:FC<GameOverProps>=({score})=>{
             body: JSON.stringify({
                 name,
                 score
-
             }),
         });
         // const {url}=await res.json();
