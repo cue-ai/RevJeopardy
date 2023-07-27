@@ -26,7 +26,7 @@ export async function GET(request: Request) {
                 }}
             >
 
-                {(user && score  )? (
+                {(user )? (
                     <div
                         tw={"w-full flex flex-col items-center"}
                     >
