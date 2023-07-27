@@ -22,7 +22,7 @@ export async function generateMetadata(
 ): Promise<Metadata> {
     return {
         title: {
-            default: "Revjeopardy.com",
+            default: "Revjeopardy",
             template: `%s - Revenue Operations themed jeopardy`,
         },
         description:
