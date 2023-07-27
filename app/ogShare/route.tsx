@@ -30,7 +30,7 @@ export async function GET(request: Request) {
                     <div
                         tw={"w-full flex flex-col items-center"}
                     >
-                        <p tw={"text-xl text-slate-400"}>{name}</p>
+                        <p tw={"text-4xl text-slate-400"}>{name}</p>
 
                         <div tw={"w-full flex justify-center overflow-auto"}>
                                <h1 tw={"font-medium text-white font-mono text-4xl"}>{`Won ${score} dollars.`}</h1>
