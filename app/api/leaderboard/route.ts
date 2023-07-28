@@ -27,8 +27,8 @@ export async function GET(req: Request) {
 
         const res =await queryMongo("revJeopardyLeaderboard");
         const sorted=res.sort((a, b) => b.score - a.score)
-        const topTen=sorted.slice(0,10);
-
+        let topTen=sorted.slice(0,10);
+        topTen=topTen.filter((elem)=>elem.score>0);
         // get shareableLink
         return NextResponse.json({topTen})
     } catch (err) {
