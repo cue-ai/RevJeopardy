@@ -10,6 +10,7 @@ export const GameOver:FC<GameOverProps>=({score,name})=>{
 
     const [loading,setLoading]=useState(false);
     const [submitted,setSubmitted]=useState(false);
+    const [copied,setCopied]=useState(false);
     const [savedUrl,setSavedUrl]=useState("");
     const [rankState,setRankState]=useState<number >(0);
     const [isFirstTime,setIsFirstTime]=useState(true);
@@ -41,6 +42,7 @@ export const GameOver:FC<GameOverProps>=({score,name})=>{
         setIsFirstTime(false)
         if (savedUrl){
             await navigator.clipboard.writeText(savedUrl);
+            setCopied(true)
             return;
         }
         try{
@@ -55,6 +57,7 @@ export const GameOver:FC<GameOverProps>=({score,name})=>{
             const {url}=await res.json();
             await navigator.clipboard.writeText(url);
             setSavedUrl(url);
+            setCopied(true)
             setLoading(false)
         }
         catch(err){
@@ -98,7 +101,7 @@ export const GameOver:FC<GameOverProps>=({score,name})=>{
                             className="tracking-widest mt-6 px-4 py-2 bg-blue-500 hover:bg-blue-400 text-white rounded"
                             onClick={shareScore}
                     >
-                        {!savedUrl?`Share Score`: "Copied to clipboard"}</button>
+                        {!copied?`Share Score`: "Copied to clipboard"}</button>
                 </div>
             </div>
         }
