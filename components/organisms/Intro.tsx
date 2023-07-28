@@ -4,7 +4,7 @@ import {Alex} from "@/components/organisms/Sprites/Alex";
 import {LeaderboardEntry} from "@/shared/types/Game.types";
 import {Leaderboard} from "@/components/organisms/Leaderboard";
 
-const headerText="Welcome to RevJeopardy, Jeopardy for Revenue Operations!";
+const headerText="Welcome to RevJeopardy!";
 const contentText=`Choose one of the 2 buttons below to either
                                                 start playing or go through the tutorial.`;
 export const Intro=()=>{
