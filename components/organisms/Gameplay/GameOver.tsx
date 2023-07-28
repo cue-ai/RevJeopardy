@@ -29,8 +29,8 @@ export const GameOver:FC<GameOverProps>=({score,name})=>{
                 score
             }),
         });
-        // const {url}=await res.json();
-        // setSavedUrl(url);
+        const {url}=await res.json();
+        setSavedUrl(url);
         setLoading(false)
         setSubmitted(true)
     }

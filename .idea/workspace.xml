@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9116e019-c78b-4f86-9836-1a8ea090f5c4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/api/leaderboard/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/leaderboard/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/organisms/Gameplay/GameOver.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/organisms/Gameplay/GameOver.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +66,7 @@
       <workItem from="1689879667230" duration="323000" />
       <workItem from="1689880152975" duration="31969000" />
       <workItem from="1689977153818" duration="74750000" />
-      <workItem from="1690477826197" duration="13169000" />
+      <workItem from="1690477826197" duration="13335000" />
     </task>
     <servers />
   </component>
