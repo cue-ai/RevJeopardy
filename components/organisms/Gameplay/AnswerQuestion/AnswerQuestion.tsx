@@ -41,7 +41,6 @@ export const AnswerQuestion:FC<AnswerQuestionProps>=({question,onNextClick,
     const [numCorrect,setNumCorrect]=useState(0);
     // for timer
     const onTimeOver=()=>{
-        return
         if (tutorialState)return
         if (loading || answeredIncorrectly || answeredCorrectly)return;
         if (questionCategory==="wager" &&  (wagerAmount<5 || wagerAmount>=score)){
