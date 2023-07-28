@@ -14,7 +14,9 @@ export type DisplayQuestionProps={
 }
 export const DisplayQuestion:FC<DisplayQuestionProps>=({numDollars,question,selectedOption,
                                                            setSelectedOption,handleAnswerSubmit,timer,tutorialError})=>{
-    const {text1:header,text2:content}=useTypingAnimationTwoElements(`${numDollars} dollars`,question.text,40,10)
+    // const {text1:header,text2:content}=useTypingAnimationTwoElements(`${numDollars} dollars`,question.text,40,10)
+    const header=`${numDollars} dollars`;
+    const content=question.text;
     return (
         <div className={"w-full h-full  grid place-content-center bg-blue-800 space-y-12 md:px-44"}>
             <h1 className={"text-5xl tracking-widest"}>{header}</h1>

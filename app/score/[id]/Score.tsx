@@ -32,7 +32,7 @@ export const Score:FC<ScoreProps>=({id})=>{
     const router = useRouter()
     return <div className={`bg-slate-500 border rounded-md text-white ${!userDetails ? "px-12 py-16":"py-16"} text-white text-center`}>
         {userDetails?._id && <Alex headerText={`${userDetails.name} has a score of ${userDetails.score}`}
-                                    contentText={`Better than ${userDetails?.rank}% of people who played RevJeopardy.`}/>}
+                                    contentText={`Better than ${userDetails?.rank}% of people who played RevJeopardy.`} isStatic={false}/>}
         <button className="tracking-widest mt-6 px-4 py-2 bg-blue-500 hover:bg-blue-400 text-white rounded" onClick={()=>{
             router.push("/")
         }}>

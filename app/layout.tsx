@@ -32,14 +32,14 @@ export async function generateMetadata(
             icon: "/icon.ico",
         },
         openGraph: {
-            title: "Revenue based Jeopardy",
+            title: "Revenue themed Jeopardy",
             description:
                 "A RevOps twist on the classic game show, Jeopardy",
             images: [`${process.env.FRONTEND_URL}og`],
         },
         twitter: {
             card: "summary_large_image",
-            title: "Revenue based Jeopardy",
+            title: "Revenue themed Jeopardy",
             description:
                 'A RevOps twist on the classic game show, Jeopardy',
             images: [`${process.env.FRONTEND_URL}og`],

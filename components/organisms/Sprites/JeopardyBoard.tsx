@@ -56,7 +56,7 @@ export const JeopardyBoard=({categories,setSelectedQuestion,score,prevQuestions}
             <div className="grid grid-cols-5 gap-2 p-4 bg-black">
             {categories.map((category, i) => (
                 <div key={i} className="flex flex-col items-center bg-black">
-                    <div className="font-bold md:text-2xl text-xs mb-2 h-20 w-full bg-blue-700 text-white grid place-content-center tracking-widest">{category.name}</div>
+                    <div className="font-bold md:text-2xl text-xs mb-2 h-20 w-full bg-blue-700 text-white flex justify-center items-center tracking-widest text-center">{category.name}</div>
 
                     {category.questions.map((question, j) => {
                        const prevQuestionSet= new Set(prevQuestions);

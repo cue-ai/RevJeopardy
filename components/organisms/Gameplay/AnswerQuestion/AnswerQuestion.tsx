@@ -41,7 +41,7 @@ export const AnswerQuestion:FC<AnswerQuestionProps>=({question,onNextClick,
     const [numCorrect,setNumCorrect]=useState(0);
     // for timer
     const onTimeOver=()=>{
-
+        return
         if (tutorialState)return
         if (loading || answeredIncorrectly || answeredCorrectly)return;
         if (questionCategory==="wager" &&  (wagerAmount<5 || wagerAmount>=score)){
@@ -101,9 +101,9 @@ export const AnswerQuestion:FC<AnswerQuestionProps>=({question,onNextClick,
 
     return <div className={"w-full h-full  py-10 text-center"}>
             {/*PERCENT ANSWERED CORRECT*/}
-            {
-                (typeof problemAccuracy!=="undefined" && !tutorialState) && <AlexHeader text={`${problemAccuracy}% of people have answered this correct`}/>
-            }
+            {/*{*/}
+            {/*    (typeof problemAccuracy!=="undefined" && !tutorialState) && <AlexHeader text={`${problemAccuracy}% of people have answered this correct`}/>*/}
+            {/*}*/}
 
 
             <div className={`bg-slate-500 border rounded-md p-2 text-white 
@@ -127,13 +127,13 @@ export const AnswerQuestion:FC<AnswerQuestionProps>=({question,onNextClick,
                     : answeredCorrectly
                     ?<>
                             <Confetti/>
-                        <Alex headerText={"Congratulations"} contentText={`You just made ${questionCategory==="wager" ?wagerAmount:question.value} dollars!`} button1={nextButton}/>
-                        <h1 className={"tracking-wider text-slate-800 text-md"}>{`${numCorrect} people got this question right`}</h1>
+                        <Alex headerText={"Congratulations"} contentText={`You just made ${questionCategory==="wager" ?wagerAmount:question.value} dollars! ${problemAccuracy}% of 
+                        people have answered this correct.`} button1={nextButton} isStatic={true}/>
                         </>:
                     answeredIncorrectly?
                         < >
-                            <Alex headerText={"Oops"} contentText={`The correct answer was ${question.answer}`} button1={nextButton}/>
-                            <h1 className={"tracking-wider text-slate-800 text-md"}>{`${numCorrect} people got this question right`}</h1>
+                            <Alex headerText={"Oops"} contentText={`The correct answer was ${question.answer}. ${problemAccuracy}% of 
+                        people have answered this correct.`} button1={nextButton} isStatic={true}/>
                         </>
                     :<div className={"w-full h-full"}>
                        <DisplayQuestion numDollars={questionCategory==="wager" ? wagerAmount:question.value}

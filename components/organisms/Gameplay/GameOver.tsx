@@ -3,10 +3,11 @@ import {FC, FormEventHandler, useEffect, useState} from "react";
 import {Loading} from "@/components/atoms/Loading";
 
 export type GameOverProps={
-    score:number
+    score:number,
+    name:string
 }
-export const GameOver:FC<GameOverProps>=({score})=>{
-    const [name,setName]=useState("");
+export const GameOver:FC<GameOverProps>=({score,name})=>{
+
     const [loading,setLoading]=useState(false);
     const [submitted,setSubmitted]=useState(false);
     const [savedUrl,setSavedUrl]=useState("");
@@ -16,12 +17,8 @@ export const GameOver:FC<GameOverProps>=({score})=>{
     const handleSubmit=async(e: any)=>{
         setIsFirstTime(false)
         e.preventDefault()
-        if (name.length<3){
-            alert("Name must be at least 3 characters");
-            return
-        }
+
         if (submitted) {
-            // await navigator.clipboard.writeText(savedUrl);
             return
         }
         setLoading(true)
@@ -40,10 +37,7 @@ export const GameOver:FC<GameOverProps>=({score})=>{
     const shareScore=async(e:any)=>{
 
         e.preventDefault();
-        if (name.length<3){
-            alert("Name must be at least 3 characters");
-            return
-        }
+
         setIsFirstTime(false)
         if (savedUrl){
             await navigator.clipboard.writeText(savedUrl);
@@ -91,34 +85,21 @@ export const GameOver:FC<GameOverProps>=({score})=>{
         {loading ? <div className={"mt-12"}><Loading/></div>
             :
             <div className={"w-full py-2  flex flex-col items-center justify-center "}>
-        <Alex isStatic={!isFirstTime} headerText={`Congrats, You have a final score of ${score}, better than ${rankState}% of people who play RevJeopardy` }
+        <Alex isStatic={true} headerText={score>0 ?`Congrats, You have a final score of ${score}, better than ${rankState}% of people who play RevJeopardy`:"Try again" }
               contentText={`Add your score to the leaderboard and share with friends`} />
 
+                <div className={"flex space-x-8 h-full"}>
+                    <button type="submit"
+                            className="tracking-widest mt-6 px-4 py-2 bg-blue-500 hover:bg-blue-400 text-white rounded"
+                    onClick={handleSubmit}>
+                        {`${!submitted ? "Add Score": "Added"}`}</button>
 
-            <form className={"w-6/12 mt-10 space-y-4 flex flex-col justify-center items-center"} onSubmit={handleSubmit}>
-            <input  id="first_name"
-                   className="tracking-widest bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                   placeholder="Name" required
-                   minLength={1}
-                   disabled={submitted}
-                   onChange={(e) => setName(e.target.value)}
-                   value={name}
-            />
-            <div className={"flex space-x-8 h-full"}>
-                <button type="submit"
-                        className="tracking-widest mt-6 px-4 py-2 bg-blue-500 hover:bg-blue-400 text-white rounded"
-                onClick={handleSubmit}>
-                    {`${!submitted ? "Add Score": "Added"}`}</button>
-
-                <button
-                        className="tracking-widest mt-6 px-4 py-2 bg-blue-500 hover:bg-blue-400 text-white rounded"
-                        onClick={shareScore}
-                >
-                    {!savedUrl?`Share Score`: "Copied to clipboard"}</button>
-            </div>
-
-
-        </form>
+                    <button
+                            className="tracking-widest mt-6 px-4 py-2 bg-blue-500 hover:bg-blue-400 text-white rounded"
+                            onClick={shareScore}
+                    >
+                        {!savedUrl?`Share Score`: "Copied to clipboard"}</button>
+                </div>
             </div>
         }
 

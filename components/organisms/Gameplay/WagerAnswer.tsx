@@ -10,7 +10,7 @@ export const WagerAnswer:FC<WagerAnswerProps>=({setWagerAmount})=>{
     const [value,setValue]=useState<number>(0);
     return( <>
         <Alex headerText={`Choose a wager amount`} contentText={`Here's a daily double. You have to wager some amount (greater than 5) 
-        and less than the amount of money you have. You have 10 seconds.`}/>
+        and less than the amount of money you have. You have 10 seconds.`} isStatic={true}/>
         <form className={"w-full"} onSubmit={(e)=>{
             e.preventDefault();
              //     check for wager value

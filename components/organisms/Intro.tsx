@@ -5,8 +5,7 @@ import {LeaderboardEntry} from "@/shared/types/Game.types";
 import {Leaderboard} from "@/components/organisms/Leaderboard";
 
 const headerText="Welcome to RevJeopardy!";
-const contentText=`Choose one of the 2 buttons below to either
-                                                start playing or go through the tutorial.`;
+const contentText=`Choose one of the 2 buttons below to either start playing or go through the tutorial.`;
 export const Intro=()=>{
     const {setCurrentState}=useContext(CurrentStateContext)
     const button1={

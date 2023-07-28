@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 
 export const useTypingAnimation = (content:string, speed=40) => {
+
+
     const [text, setText] = useState("")
 
     const [index, setIndex] = useState(0)
@@ -20,10 +22,13 @@ export const useTypingAnimation = (content:string, speed=40) => {
             }, speed)
         }
     }, [index])
-    return {text}
+    return {text:content}
+    // return {text}
 };
 
 export const useTypingAnimationTwoElements = (content1:string,content2:string, speed1=40, speed2=40) => {
+    // return {text1:content1,text2:content2}
+
 
     const [text1, setText1] = useState("")
     const [text2, setText2] = useState("")

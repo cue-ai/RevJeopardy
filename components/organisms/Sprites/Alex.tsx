@@ -18,7 +18,7 @@ export const Alex:FC<AlexProps>=({headerText,contentText,
 
 const {text1:header,text2:content}=useTypingAnimationTwoElements(headerText??"",contentText,40,10)
     return (
-        <div className={"w-full grid justify-items-center "}>
+        <div className={"w-full h-full grid justify-items-center "}>
             <div className={"w-full flex justify-center pt-5"}>
                     <img src={"/alex.png"} className={"md:w-3/12 w-10/12"}/>
             </div>
