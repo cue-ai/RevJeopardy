@@ -18,10 +18,10 @@ export const DisplayQuestion:FC<DisplayQuestionProps>=({numDollars,question,sele
     const header=`${numDollars} dollars`;
     const content=question.text;
     return (
-        <div className={"w-full h-full  grid place-content-center bg-blue-800 space-y-12 md:px-44"}>
-            <h1 className={"text-5xl tracking-widest"}>{header}</h1>
+        <div className={"w-full h-full  flex flex-col justify-center items-center bg-blue-800 space-y-2 md:px-44 pt-12"}>
+            <h1 className={"text-5xl tracking-widest mb-12"}>{header}</h1>
             <p className={"text-xl tracking-widest"}>{content}</p>
-            <div>
+            <div className={"my-12"}>
             {tutorialError && <h1 className={"text-red-500 text-3xl"}>Incorrect Answer</h1>}
             <CheckBoxForm values={question.answers} selectedValue={selectedOption} handleSubmit={handleAnswerSubmit}
                           setSelectedOption={setSelectedOption}/>

@@ -127,12 +127,12 @@ export const AnswerQuestion:FC<AnswerQuestionProps>=({question,onNextClick,
                     ?<>
                             <Confetti/>
                         <Alex headerText={"Congratulations"} contentText={`You just made ${questionCategory==="wager" ?wagerAmount:question.value} dollars! ${problemAccuracy}% of 
-                        people have answered this correct.`} button1={nextButton} isStatic={true}/>
+                        people have answered this correctly.`} button1={nextButton} isStatic={true}/>
                         </>:
                     answeredIncorrectly?
                         < >
-                            <Alex headerText={"Oops"} contentText={`The correct answer was ${question.answer}. ${problemAccuracy}% of 
-                        people have answered this correct.`} button1={nextButton} isStatic={true}/>
+                            <Alex headerText={"Oops, so close."} contentText={`The correct answer was ${question.answer}. ${problemAccuracy}% of 
+                        people have answered this correctly.`} button1={nextButton} isStatic={true}/>
                         </>
                     :<div className={"w-full h-full"}>
                        <DisplayQuestion numDollars={questionCategory==="wager" ? wagerAmount:question.value}
