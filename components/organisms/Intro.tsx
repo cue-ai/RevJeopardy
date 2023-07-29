@@ -24,7 +24,7 @@ export const Intro=()=>{
             >
                 View LeaderBoard
             </button>
-            <Alex headerText={headerText} contentText={contentText} button1={button1} button2={button2}/>
+            <Alex headerText={headerText} contentText={contentText} button1={button1} button2={button2} isStatic={true}/>
         </div>
 
     </div>
